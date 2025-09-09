@@ -14,13 +14,13 @@ router.get('/', function (req, res) {
 });
 
 // readiness test
-router.get('/v1/health', function (req, res) {
+router.get('/api/v1/health', function (req, res) {
   var returnData = {result: 'ok', version: version};
   res.status(200).send(returnData);
 });
 
 // echo service
-router.get('/v1/echo/:msg?', function (req, res) {
+router.get('/api/v1/echo/:msg?', function (req, res) {
   var returnData = {result: 'ok', msg: (req.params.msg || '')};
   res.status(200).send(returnData);
 });
